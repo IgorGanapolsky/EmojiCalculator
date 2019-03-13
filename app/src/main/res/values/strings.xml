@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">Emoji Calculator</string>
+  <string name="check_amount">Check Amount 🧾</string>
+  <string name="bad">💩</string>
+  <string name="okay">👍</string>
+  <string name="great">🎉</string>
+  <string name="taxLabel">+ Tip</string>
+  <string name="totalLabel">Total</string>
+  <string name="round_up_to_nearest_dollar">Round up to nearest 💵</string>
+</resources>

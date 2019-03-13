@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  tools:context=".MainActivity">
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:padding="16dp"
+    app:layout_constraintBottom_toTopOf="@+id/switchRound"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/inputAmount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/check_amount"
+      android:inputType="numberDecimal" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <Switch
+    android:id="@+id/switchRound"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:switchPadding="16dp"
+    android:text="@string/round_up_to_nearest_dollar"
+    app:layout_constraintBottom_toTopOf="@+id/buttonBad"
+    app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+  <Button
+    android:id="@+id/buttonBad"
+    style="@style/Widget.AppCompat.Button.Borderless"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:text="@string/bad"
+    android:textSize="@dimen/emojiSize"
+    app:layout_constraintBottom_toTopOf="@+id/textTipLabel"
+    app:layout_constraintEnd_toStartOf="@+id/buttonOkay"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/switchRound" />
+
+  <Button
+    android:id="@+id/buttonOkay"
+    style="@style/Widget.AppCompat.Button.Borderless"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:text="@string/okay"
+    android:textSize="@dimen/emojiSize"
+    app:layout_constraintBaseline_toBaselineOf="@+id/buttonBad"
+    app:layout_constraintEnd_toStartOf="@+id/buttonGreat"
+    app:layout_constraintStart_toEndOf="@+id/buttonBad" />
+
+  <Button
+    android:id="@+id/buttonGreat"
+    style="@style/Widget.AppCompat.Button.Borderless"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:text="@string/great"
+    android:textSize="@dimen/emojiSize"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonOkay"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/buttonOkay" />
+
+  <TextView
+    android:id="@+id/textTipLabel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:text="@string/taxLabel"
+    android:textSize="@dimen/textCalculation"
+    app:layout_constraintBottom_toTopOf="@+id/textTotalLabel"
+    app:layout_constraintEnd_toEndOf="@+id/textTotalLabel"
+    app:layout_constraintTop_toBottomOf="@+id/buttonBad" />
+
+  <TextView
+    android:id="@+id/textTip"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:textSize="@dimen/textCalculation"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textTipLabel"
+    app:layout_constraintEnd_toStartOf="@id/textPercent"
+    app:layout_constraintStart_toEndOf="@+id/textTipLabel"
+    tools:text="3.72" />
+
+  <TextView
+    android:id="@+id/textPercent"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:padding="16dp"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textTip"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:text="18%" />
+
+  <TextView
+    android:id="@+id/textTotalLabel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:padding="16dp"
+    android:text="@string/totalLabel"
+    android:textSize="@dimen/textCalculation"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textTipLabel" />
+
+  <TextView
+    android:id="@+id/textTotal"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:textSize="@dimen/textCalculation"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textTotalLabel"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/textTip"
+    tools:text="15.87" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
